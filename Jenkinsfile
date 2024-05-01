@@ -51,7 +51,7 @@ pipeline {
             // Send success notification email
             emailext subject: "Pipeline Success",
                 body: "The pipeline has completed successfully.",
-                to: "your-email@example.com",
+                to: "ashwathiash2000@gmail.com",
                 attachmentsPattern: "**/*"
         }
         failure {
@@ -59,7 +59,7 @@ pipeline {
             // Send failure notification email
             emailext subject: "Pipeline Failure",
                 body: "The pipeline has failed. Please check the logs for details.",
-                to: "your-email@example.com",
+                to: "ashwathiash2000@gmail.com",
                 attachmentsPattern: "**/*"
         }
     }
