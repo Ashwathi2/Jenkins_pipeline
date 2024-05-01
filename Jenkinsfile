@@ -45,33 +45,22 @@ pipeline {
             }
         }
     }
-   post {
+    post {
         success {
             echo '=== Pipeline succeeded ==='
             // Send success notification email
-            post{
-                success{
-                    mail to: 'ashwathiash2000@gmail.com',
-                    subject: "Pipeline Success",
-                    body: "The pipeline has completed successfully.",
-                    
-                }
-                
-                }
-                
-            
+            emailext subject: "Pipeline Success",
+                body: "The pipeline has completed successfully.",
+                to: "your-email@example.com",
+                attachmentsPattern: "**/*"
         }
         failure {
             echo '=== Pipeline failed ==='
             // Send failure notification email
-             post{
-                failure{
-                    mail to: 'ashwathiash2000@gmail.com',
-                    subject: "Pipeline Failed",
-                    body: "The pipeline has failed.",
-                    
-                }
-                
-                }
+            emailext subject: "Pipeline Failure",
+                body: "The pipeline has failed. Please check the logs for details.",
+                to: "your-email@example.com",
+                attachmentsPattern: "**/*"
         }
     }
+}
