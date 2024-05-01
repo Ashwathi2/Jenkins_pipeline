@@ -49,22 +49,22 @@ pipeline {
         success {
             echo '=== Pipeline succeeded ==='
             // Send success notification email
-            emailext (
-                to: 'ashwathiash2000@gmail.com',
+            
+                mail to: 'ashwathiash2000@gmail.com',
                 subject: "Pipeline Success",
                 body: "The pipeline has completed successfully.",
                 attachmentsPattern: '**/*'
-            )
+            
         }
         failure {
             echo '=== Pipeline failed ==='
             // Send failure notification email
-            emailext (
-                to: 'ashwathiash2000@gmail.com',
+           
+                mail to: 'ashwathiash2000@gmail.com',
                 subject: "Pipeline Failure",
                 body: "The pipeline has failed. Please check the logs for details.",
                 attachmentsPattern: '**/*'
-            )
+            
         }
     }
 }
