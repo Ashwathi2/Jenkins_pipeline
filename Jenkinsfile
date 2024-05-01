@@ -53,7 +53,7 @@ pipeline {
                 mail to: 'ashwathiash2000@gmail.com',
                 subject: "Pipeline Success",
                 body: "The pipeline has completed successfully.",
-                attachmentsPattern: '**/*'
+                
             
         }
         failure {
@@ -63,7 +63,7 @@ pipeline {
                 mail to: 'ashwathiash2000@gmail.com',
                 subject: "Pipeline Failure",
                 body: "The pipeline has failed. Please check the logs for details.",
-                attachmentsPattern: '**/*'
+                
             
         }
     }
