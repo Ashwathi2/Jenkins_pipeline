@@ -44,23 +44,24 @@ pipeline {
                 
             }
         }
+        
     }
     post {
         success {
             echo '=== Pipeline succeeded ==='
             // Send success notification email
-            emailext subject: "Pipeline Success",
+            emailext to: "ashwathiash2000@gmail.com",
+                subject: "Pipeline Success",
                 body: "The pipeline has completed successfully.",
-                to: "ashwathiash2000@gmail.com",
-                attachmentsPattern: "**/*"
+                attachLog: true
         }
         failure {
             echo '=== Pipeline failed ==='
             // Send failure notification email
-            emailext subject: "Pipeline Failure",
+            emailext to: "ashwathiash2000@gmail.com",
+                subject: "Pipeline Failure",
                 body: "The pipeline has failed. Please check the logs for details.",
-                to: "ashwathiash2000@gmail.com",
-                attachmentsPattern: "**/*"
+                attachLog: true
         }
     }
 }
